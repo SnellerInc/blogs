@@ -33,6 +33,8 @@ Of note is [OpenTelemetry](https://opentelemetry.io), an emerging standardizatio
 
 Since there’s been a Cambrian explosion of tools for every kind of data pipeline or use case, we have to justify why we felt the need to add another one to the mix. To justify this, here (in our view) are the three key characteristics of event data and the needs of an event data platform.
 
+![event data](/assets/event-data.png)
+
 ## Why do today’s data platforms fall short for event data?
 
 Here’s a quick summary of an ideal data platform for event data:
@@ -44,7 +46,10 @@ Here’s a quick summary of an ideal data platform for event data:
 **Text Search platforms:** Tools like Elasticsearch, OpenSearch, ChaosSearch and Quickwit belong in this category. They were designed first and foremost to handle querying of unstructured data such as text. Because they were built to extract structure from text (often by building an [inverted index](https://en.wikipedia.org/wiki/Inverted_index)), they've become a natural choice for handling the semi-structured nature of event data (such as structured logging).  Of these, Elastic has the advantage of a long-established open source solution with the ELK stack for observability and security use cases.
 
 **Structured data platforms:** Every data warehouse, data lake or analytic database that supports SQL as its primary API, belongs in this category. The obvious advantage here is unmatched familiarity of SQL, and the sheer scale of the supporting ecosystem that has developed over decades.
-When we consider the three characteristics of an ideal event data platform, these alternatives fall short along typically one or more dimensions.
+
+In our view, they don't really work well for event data. Here's why:
+
+![sneller why](/assets/sneller-why.png)
 
 ## Sneller: Built for event data
 
@@ -54,6 +59,8 @@ This is what we set out to solve at Sneller. We wanted to provide:
 -	Far simpler pipelines for JSON and semi-structured data - no more brittle ETL/ELT only for data reshaping, and no more headaches due to schema evolution
 
 We will get into details of how we achieved this in subsequent blog posts. For now, here’s an illustration of the complete Sneller Cloud user experience today (technical details to follow in subsequent blog posts).
+
+![sneller architecture](/assets/sneller-arch.png)
 
 Sneller’s core value compared to existing alternatives, is **simplicity at scale**. You simply load your JSON-encoded event data directly into S3 (or other cloud object stores in the near future), and proceed to query it with standard SQL. There's no need to provision dedicated capacity for indexing, build ETL/ELT pipelines, or handle schema evolution, or worry about how to age your data out to cheaper storage. This comes from four key design decisions:
 

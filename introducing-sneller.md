@@ -67,6 +67,8 @@ Moreover, unlike many databases/data warehouses, Sneller does not ‘copy’ or 
 
 Finally, Sneller Cloud compute nodes do not have any locally attached storage, which considerably simplifies scaling but also means that we don't persist any customer data (even inadvertently) within our service. In memespeak,
 
+![all-your-data-belongs-to-you](/assets/all-your-data-belongs-to-you.png)
+
 ### Schema-agnostic
 
 Sneller is completely [schema-on-read](https://www.techopedia.com/definition/30153/schema-on-read). This is a huge advantage for semi-structured JSON data which is naturally built to be flexible. It avoids the need for brittle, hard to maintain ETL/ELT pipelines whose sole purpose is to reshape JSON to ingest it into a table.

@@ -21,6 +21,8 @@ In this blog, we’ll talk about
 
 A few months ago, Erik Bernhardsson, formerly of Spotify and someone who’s well known on data twitter, asked:
 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Spotify made a (imo) brilliant architectural decision early and made it super easy for any service to emit machine readable events with a proper schema. This was the basis of the whole analytics stack. I think this is rare though? Do we need better tooling for it?</p>&mdash; Erik Bernhardsson (@bernhardsson) <a href="https://twitter.com/bernhardsson/status/1435648096155881482?ref_src=twsrc%5Etfw">September 8, 2021</a></blockquote>
+
 For a while now, we’ve been living in the world of event data that Erik is referring to. Events, in their simplest and most general form are timestamped (and increasingly, location-stamped) data about any activity of interest.
 
 Some of the earliest and well known types of event data were (and still are) from **Security/SIEM use cases** - spanning security events from applications, operating systems and network infrastructure among other event types. Another big consumer of event data is **Observability** (often shortened to ‘o11y’), which covers application **logs**, infrastructure **metrics** (e.g. CPU load, memory utilization) and **traces** - which are data that show the detailed path that a request (e.g. an API call or a user action) takes through the entire technology stack from end to end. A third well known class of event data is **Product analytics** used by growth orgs, based on app instrumentation. At its heart event data is a time-ordered stream of well-defined user action events.

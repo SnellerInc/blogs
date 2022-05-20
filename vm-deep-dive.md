@@ -379,3 +379,8 @@ There is also a considerable amount of complexity lurking in our
 query planner in order to translate more advanced SQL queries
 into something that fits into our relatively simple VM model.
 We are planning on covering some of those topics in much more detail in future posts.
+
+### Check it out
+
+If you want to see more for yourself, please head over to the 
+main repository at https://github.com/SnellerInc/sneller.

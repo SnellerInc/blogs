@@ -1,7 +1,8 @@
 # Building a SQL VM in AVX-512 Assembly
 
-One of [Sneller's](https://github.com/SnellerInc/sneller) central innovations
-is its "interpreter," which is written almost entirely
+As part of open sourcing Sneller (https://github.com/SnellerInc/sneller), 
+we would like to highlight one of the central innovations. This is the 
+"interpreter," which is written almost entirely
 in AVX-512 assembly. We are far from the first
 project to incorporate SIMD acceleration into
 a query engine, but our interpreter is unusual

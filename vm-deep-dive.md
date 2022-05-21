@@ -12,10 +12,9 @@ data instead of strictly-typed columnar data.
 ## Why?
 
 Our query engine falls roughly in to the same family
-of "SQL-on-Hadoop" query engines as Presto and Spark;
-we primarily use horizontal scaling to reduce
-query latency rather than trying to perform clever
-tricks with secondary indices or bespoke storage techniques.
+of SQL query engines as Presto, Impala and Spark
+in the sense that we use horizontal scaling and hardware acceleration
+to reduce query latency rather than relying on secondary indices.
 Consequently, the performance of the query engine
 *is* simply the performance of the interpreter;
 any improvements we make to interpreter performance
@@ -117,10 +116,10 @@ value passed as `e` would be:
 
 ### SSA IR
 
-The first stage of expression compilation is to convert
-the input AST into an SSA-based intermediate representation
-that we can more easily optimize. Our SSA instructions generally
-map 1-to-1 to bytecode VM instructions.
+The first stage of expression compilation is to convert the input AST into a
+[Single Static Assignment](https://www.cs.cornell.edu/courses/cs6120/2022sp/lesson/6/)-based
+intermediate representation that we can more easily optimize.
+Our SSA instructions generally map 1-to-1 to bytecode VM instructions.
 
 Our SSA representation doesn't use basic blocks,
 as they would complicate the intermediate representation,

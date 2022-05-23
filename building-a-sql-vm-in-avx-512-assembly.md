@@ -1,10 +1,9 @@
 # Building a SQL VM in AVX-512 Assembly
 
 As part of open sourcing Sneller (https://github.com/SnellerInc/sneller), 
-we would like to highlight one of the central innovations. This is the 
-"interpreter," which is written almost entirely
-in AVX-512 assembly. We are far from the first
-project to incorporate SIMD acceleration into
+we would like to highlight its central innovations, the "interpreter,"
+which is a bytecode-based virtual machine written almost entirely in AVX-512 assembly.
+We are far from the first project to incorporate SIMD acceleration into
 a query engine, but our interpreter is unusual
 in that it is implemented *entirely* in assembly
 despite it operating on flexibly-typed, row-oriented
@@ -36,7 +35,8 @@ If your interpreter is slow, your query engine will end up getting
 out-performed by simple shell scripts until your data becomes
 "big" enough to warrant a distributed query engine. (See 
 ["Command Line Tools can be 235x Faster than your Hadoop Cluster"](
-https://adamdrake.com/command-line-tools-can-be-235x-faster-than-your-hadoop-cluster.html) for a motivating example). Our design makes the best possible use
+https://adamdrake.com/command-line-tools-can-be-235x-faster-than-your-hadoop-cluster.html) for a motivating example).
+Our design makes the best possible use
 of the available hardware resources, regardless of whether
 that is just a single CPU core or several hundred CPU cores
 spread over a half dozen machines.
@@ -377,7 +377,7 @@ lookup to string matching to great-circle distance calculation.
 There is also a considerable amount of complexity lurking in our
 query planner in order to translate more advanced SQL queries
 into something that fits into our relatively simple VM model.
-We are planning on covering some of those topics in much more detail in future posts.
+We are planning on covering some of those topics in much more detail in future blog posts.
 
 ### Check it out
 

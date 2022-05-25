@@ -12,7 +12,7 @@ flowchart LR
     A[Ingestion<br>Storage<br>Query Execution] --- B[Ingestion<br>Storage<br>Query Execution]
     B --- C[Ingestion<br>Storage<br>Query Execution]
 ```
-Direct-attached storage is often used to persist the data. If the node is removed from the cluster, so is the data on that node. When clusters grow bigger over time, this becomes increasingly more difficult to manage. Operational costs skyrocket and dedicated personel is required to manage the clusters.
+Direct-attached storage is often used to persist the data. If the node is removed from the cluster, so is the data on that node. As clusters grow over time, they becomes increasingly difficult to manage. Operational costs skyrocket and dedicated personnel are required to manage the clusters.
 
 Sneller uses a different approach that fits cloud-native architecture much better. It clearly seperates the various aspects of the database.
 ```mermaid

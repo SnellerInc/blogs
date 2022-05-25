@@ -61,7 +61,7 @@ All persistent data in Sneller is stored in object storage (i.e. S3 or Minio). T
 3. No loss of data, when the database cluster is deleted.
 4. No need to learn new storage. Just use the object storage you are already familiar with.
 
-Moving persistent data from the database engine to object storage significantly reduce operational costs and risks. To make sure performance is high, the object storage should be located as close to the query engine as possible (i.e. same AWS region).
+Moving persistent data from the database engine to object storage significantly reduces operational costs and risks. To ensure maximum performance, the object storage should be located as close to the query engine as possible (i.e. same AWS region).
 
 Although Sneller currently only supports AWS S3 (or compatible), the access-layer is abstracted and can easily be ported to support Azure Blob storage, Google Cloud Storage, ...
 

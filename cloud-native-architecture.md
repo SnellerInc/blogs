@@ -1,7 +1,7 @@
 # Sneller cloud-native architecture
 Most database engines were designed well before cloud-native architecture become popular. Some engines have been migrated to run in the cloud, but the architecture is often still monolithic.
 
-In the beginning, databases could only scale vertically (adding more CPU power). Vertical scaling is limited, so databases started to scale horizontally (addming more computers). Although the database can scale horizontally, all nodes have the same responsibilities. Each node typically takes care of:
+In the beginning, databases could only scale vertically (adding more CPU power). Vertical scaling is limited, so databases started to scale horizontally (adding more computers). Although the database can scale horizontally, each node typically has the same responsibilities:
 1. Ingesting the data.
 2. Storing the data.
 3. Excute queries on the data.

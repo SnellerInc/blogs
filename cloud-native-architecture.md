@@ -70,4 +70,4 @@ Sneller's query execution engine uses AVX-512 to run queries with much higher th
 
 AWS provides up to 100Gb/s of bandwidth per EC2 instance and data is fetched in parallel from S3 to fully utilize the available network bandwidth. Even if data is not in cache, it can be loaded quickly and efficiently.
 
-You can scale down (or complete terminate) the query execution nodes, when you don't need to query data.No persistent data is stored in the query nodes, so there is no loss of data. Ingestion of new data can still continue, because it runs on seperate nodes. This can save even more operational costs, because database nodes are often expensive, due to large amount of RAM.
+You can scale down (or completely terminate) the query execution nodes when you don't need to query data. No persistent data is stored in the query nodes, so there is no loss of data. Ingestion of new data can still continue, because it runs on separate nodes. This can save even more operational costs, because database nodes are often expensive, due to large amount of RAM.

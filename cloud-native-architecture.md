@@ -63,7 +63,7 @@ All persistent data in Sneller is stored in object storage (i.e. S3 or Minio). T
 
 Moving persistent data from the database engine to object storage significantly reduces operational costs and risks. To ensure maximum performance, the object storage should be located as close to the query engine as possible (i.e. same AWS region).
 
-Although Sneller currently only supports AWS S3 (or compatible), the access-layer is abstracted and can easily be ported to support Azure Blob storage, Google Cloud Storage, ...
+Although Sneller currently only supports AWS S3 (or compatible) object storage, the access-layer is abstracted and can easily be ported to support Azure Blob storage, Google Cloud Storage, ...
 
 ## Query execution
 Sneller's query execution engine uses AVX-512 to run queries with much higher throughput compared to traditional query engines. Queries can fan-out over multiple nodes with lineair scalability. Data is retrieved from object storage and is stored in a transient compressed memory cache on the node to reduce network bandwidth.

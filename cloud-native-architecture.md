@@ -66,7 +66,7 @@ Moving persistent data from the database engine to object storage significantly 
 Although Sneller currently only supports AWS S3 (or compatible) object storage, the access-layer is abstracted and can easily be ported to support Azure Blob storage, Google Cloud Storage, ...
 
 ## Query execution
-Sneller's query execution engine uses AVX-512 to run queries with much higher throughput compared to traditional query engines. Queries can fan-out over multiple nodes with lineair scalability. Data is retrieved from object storage and is stored in a transient compressed memory cache on the node to reduce network bandwidth.
+Sneller's query execution engine uses AVX-512 to run queries with much higher throughput compared to traditional query engines. Queries can fan-out over multiple nodes with lineair scalability. Data is retrieved from object storage and is stored in a transient compressed memory cache on the node to reduce network utilization under load.
 
 AWS provides up to 100Gb/s networking speed and data is fetched in parallel from S3 to fully utilize the available network bandwidth. Even if data is not in cache, then it can be loaded fast and efficient.
 

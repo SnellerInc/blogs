@@ -27,7 +27,7 @@ flowchart TD
     end
     I --> OS(((Object Storage))) --> QE
 ```
-Each component runs autonomous and can be scaled independently.
+Each component runs autonomously and can be scaled independently.
 1. Ingestion (loading data into the cluster) can run on any node.
 2. Persistent data is stored in object storage (i.e. S3 or Minio).
 3. Query execution is performed by specialized nodes that typically have a lot of RAM.

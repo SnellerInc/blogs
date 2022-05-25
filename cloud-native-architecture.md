@@ -32,7 +32,7 @@ Each component runs autonomously and can be scaled independently.
 2. Persistent data is stored in object storage (i.e. S3 or Minio).
 3. Query execution is performed by specialized nodes that typically have a lot of RAM.
 
-This seperation has some huge advantages that can reduce operational cost and maintenance significantly.
+This separation has some huge advantages that can reduce operational and maintenance costs significantly.
 
 ## Ingestion
 Raw JSON is not efficient to store and process. That's why Sneller converts all ingested data to a more efficient open format. This format is using open-source technologies ([binary ION](https://amzn.github.io/ion-docs/docs/binary.html) and [Zstandard compression](https://facebook.github.io/zstd/)), so there is no vendor lock-in.

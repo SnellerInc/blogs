@@ -45,7 +45,7 @@ flowchart LR
     Compress --> Persist((object storage))
 ```
 
-Ingested data is smaller and can easily converted back to the original JSON. There is no need to keep the original JSON files saving a lot of storage costs. Compressed binary ION is typically 5-30x more storage efficient compared to raw JSON files.
+Ingested data is smaller and can easily converted back to the original JSON. There is no need to keep the original JSON files, so storage costs are lower. Compressed binary ION is typically 5-30x more space-efficient than raw JSON files.
 
 Sneller is built for performance, so we built a custom-built JSON parser and binary ION writer. Ingestion is fast and efficient, so it can typically run on relatively low-end hardware and has low memory requirements. We can ingest up to **TODO** MiB/sec on a single **TODO** CPU.
 

@@ -1,7 +1,7 @@
 # Sneller cloud-native architecture
 Most database engines were designed well before cloud-native architecture become popular. Some engines have been migrated to run in the cloud, but the architecture is often still monolithic.
 
-In the beginning, databases could only scale vertically (adding more CPU power). Vertical scaling is limited, so databases started to scale horizontally (adding more computers). Although the database can scale horizontally, each node typically has the same responsibilities:
+In the beginning, databases could only scale vertically (adding more CPU power). Vertical scaling is limited, so databases started to scale horizontally (adding more servers). Although the database can scale horizontally, each node typically has the same responsibilities:
 1. Ingesting the data.
 2. Storing the data.
 3. Excute queries on the data.
@@ -35,7 +35,7 @@ Each component runs autonomously and can be scaled independently.
 This separation has some huge advantages that can reduce operational and maintenance costs significantly.
 
 ## Ingestion
-Raw JSON is not efficient to store and process. That's why Sneller converts all ingested data to a more efficient open format. This format is using open-source technologies ([binary ION](https://amzn.github.io/ion-docs/docs/binary.html) and [Zstandard compression](https://facebook.github.io/zstd/)), so there is no vendor lock-in.
+Raw JSON in its textual format is not efficient to store and process. That's why Sneller converts all ingested data to a more efficient open format. This format is using open-source technologies ([binary ION](https://amzn.github.io/ion-docs/docs/binary.html) and [Zstandard compression](https://facebook.github.io/zstd/)), so there is no vendor lock-in. Conceptually, it is a compressed row-based binary JSON format.
 
 ```mermaid
 flowchart LR
@@ -49,7 +49,7 @@ Ingested data is smaller and can easily converted back to the original JSON. The
 
 Sneller is built for performance, so we built a custom-built JSON parser and binary ION writer. Ingestion is fast and efficient, so it can typically run on relatively low-end hardware and has low memory requirements. We can ingest up to **TODO** MiB/sec on a single **TODO** CPU.
 
-The ingestion also supports ingesting other formats, such as CSV. It can easily be extended to support other formats.
+The ingestion can easily be extended to supports other formats, such as CSV.
 
 If the data-set is static, the ingestion node can be shut down after all the data has been ingested.
 
@@ -61,7 +61,7 @@ All persistent data in Sneller is stored in object storage (i.e. S3 or Minio). T
 3. No loss of data when the database cluster is deleted.
 4. No need to learn a new storage technology. Just use the object storage you are already familiar with.
 
-Moving persistent data from the database engine to object storage significantly reduces operational costs and risks. To ensure maximum performance, the object storage should be located as close to the query engine as possible (i.e. same AWS region).
+Moving persistent data from the database engine to object storage significantly reduces operational costs and risks. Object storage should be located near the query engine to ensure maximum performance (i.e. same AWS region).
 
 Although Sneller currently only supports AWS S3 (or compatible) object storage, the access-layer is abstracted and can easily be ported to support Azure Blob storage, Google Cloud Storage, ...
 

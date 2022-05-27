@@ -59,7 +59,7 @@ All persistent data in Sneller is stored in object storage (i.e. S3 or Minio). T
 1. You get all the benefits of the underlying object storage. AWS S3 provides high availability, security and up to 99.999999999% durability out of the box.
 2. No need to scale your database cluster and add expensive nodes when you need additional storage.
 3. No loss of data when the database cluster is deleted.
-4. No need to learn new storage. Just use the object storage you are already familiar with.
+4. No need to learn a new storage technology. Just use the object storage you are already familiar with.
 
 Moving persistent data from the database engine to object storage significantly reduces operational costs and risks. To ensure maximum performance, the object storage should be located as close to the query engine as possible (i.e. same AWS region).
 

@@ -57,7 +57,7 @@ If the data-set is static, the ingestion node can be shut down after all the dat
 All persistent data in Sneller is stored in object storage (i.e. S3 or Minio). This has a number of advantages:
 
 1. You get all the benefits of the underlying object storage. AWS S3 provides high availability, security and up to 99.999999999% durability out of the box.
-2. No need to scale your database cluster and add expensive nodes, because you need additional storage.
+2. No need to scale your database cluster and add expensive nodes when you need additional storage.
 3. No loss of data, when the database cluster is deleted.
 4. No need to learn new storage. Just use the object storage you are already familiar with.
 

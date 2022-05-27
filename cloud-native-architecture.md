@@ -47,7 +47,7 @@ flowchart LR
 
 Ingested data is smaller and can easily converted back to the original JSON. There is no need to keep the original JSON files, so storage costs are lower. Compressed binary ION is typically 5-30x more space-efficient than raw JSON files.
 
-Sneller is built for performance, so we built a custom-built JSON parser and binary ION writer. Ingestion is fast and efficient, so it can typically run on relatively low-end hardware and has low memory requirements. We can ingest up to **TODO** MiB/sec on a single **TODO** CPU.
+Sneller is built for performance, so we built a custom-built JSON parser and binary ION writer. Ingestion is fast and efficient, so it can typically run on relatively low-end hardware and has low memory requirements.
 
 The ingestion can easily be extended to supports other formats, such as CSV.
 

@@ -54,7 +54,7 @@ The ingestion also supports ingesting other formats, such as CSV. It can easily 
 If the data-set is static, the ingestion node can be shut down after all the data has been ingested.
 
 ## Persisting to object storage
-All persistent data in Sneller is stored in object storage (i.e. S3 or Minio). This has quite some advantages:
+All persistent data in Sneller is stored in object storage (i.e. S3 or Minio). This has a number of advantages:
 
 1. You get all the benefits of the underlying object storage. AWS S3 provides high availability, security and up to 99.999999999% durability out of the box.
 2. No need to scale your database cluster and add expensive nodes, because you need additional storage.

@@ -51,7 +51,7 @@ Sneller is built for performance, so we built a custom-built JSON parser and bin
 
 The ingestion also supports ingesting other formats, such as CSV. It can easily be extended to support other formats.
 
-When the data-set is static, then the ingestion node can be removed after all the data has been ingested.
+If the data-set is static, the ingestion node can be shut down after all the data has been ingested.
 
 ## Persisting to object storage
 All persistent data in Sneller is stored in object storage (i.e. S3 or Minio). This has quite some advantages:

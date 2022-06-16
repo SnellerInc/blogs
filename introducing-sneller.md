@@ -31,7 +31,7 @@ Event Data are seen in many areas beyond security, observability and product/ser
 
 Of note is [OpenTelemetry](https://opentelemetry.io), an emerging standardization effort for event data that aims to provide a common vocabulary for event data domains to avoid needless redundancy/reinvention.
 
-## Why do we a new data platform specifically for event data?
+## Why do we need a new data platform specifically for event data?
 
 Since there’s been a Cambrian explosion of tools for every kind of data pipeline or use case, we have to justify why we felt the need to add another one to the mix. To justify this, here (in our view) are the three key characteristics of event data and the needs of an event data platform.
 

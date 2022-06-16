@@ -6,7 +6,7 @@ In the beginning, databases could only scale vertically (adding more CPU power).
 2. Storing the data.
 3. Execute queries on the data.
 
-Each nodes performs all these tasks:
+Each node performs all these tasks:
 ```mermaid
 flowchart LR
     A[Ingestion<br>Storage<br>Query Execution] --- B[Ingestion<br>Storage<br>Query Execution]
@@ -45,7 +45,7 @@ flowchart LR
     Compress --> Persist((object storage))
 ```
 
-Ingested data is smaller and can easily converted back to the original JSON. There is no need to keep the original JSON files, so storage costs are lower. Compressed binary ION is typically 5-30x more space-efficient than raw JSON files.
+Ingested data is smaller and can easily be converted back to the original JSON. There is no need to keep the original JSON files, so storage costs are lower. Compressed binary ION is typically 5-30x more space-efficient than raw JSON files.
 
 Sneller is built for performance, so we built a custom-built JSON parser and binary ION writer. Ingestion is fast and efficient, so it can typically run on relatively low-end hardware and has low memory requirements.
 

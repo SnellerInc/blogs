@@ -1,7 +1,7 @@
 # Building a SQL VM in AVX-512 Assembly
 
 As part of open sourcing Sneller (https://github.com/SnellerInc/sneller), 
-we would like to highlight its central innovations, the "interpreter,"
+we would like to highlight its central innovations, the "interpreter",
 which is a bytecode-based virtual machine written almost entirely in AVX-512 assembly.
 We are far from the first project to incorporate SIMD acceleration into
 a query engine, but our interpreter is unusual
@@ -11,7 +11,7 @@ data instead of strictly-typed columnar data.
 
 ## Why?
 
-Our query engine falls roughly in to the same family
+Our query engine falls roughly into the same family
 of SQL query engines as Presto, Impala and Spark
 in the sense that we use horizontal scaling and hardware acceleration
 to reduce query latency rather than relying on secondary indices.
@@ -80,7 +80,7 @@ ITERATE my_table -> FILTER (x < 3) -> AGGREGATE SUM(y) -> output
 ```
 
 Internally, our query engine uses the [Amazon Ion](https://amzn.github.io/ion-docs/docs/binary.html) binary format.
-Each row of data is an ion structure composed of zero of more fields
+Each row of data is an ion structure composed of zero or more fields
 which themselves may be structures or lists (much like JSON records).
 Evaluating `x < 3` means locating the `x` field in
 each structure, unboxing it as a number, and then comparing it
@@ -125,7 +125,7 @@ Our SSA instructions generally map 1-to-1 to bytecode VM instructions.
 Our SSA representation doesn't use basic blocks,
 as they would complicate the intermediate representation,
 and they would make it harder to convert the SSA IR into
-something that can be vectorized. Instead, we use "predicated execution,"
+something that can be vectorized. Instead, we use "predicated execution",
 which means that we pass a one-bit predicate to each operation
 in order to indicate whether or not its execution should be short-circuited
 into a no-op. As we will see later on, using predicated execution instead
